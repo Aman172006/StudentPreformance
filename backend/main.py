@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import pandas as pd
 import joblib  
-from .model import StudentPerformanceModel
+from model import StudentPerformanceModel
 app = FastAPI()
 from fastapi.middleware.cors import CORSMiddleware
 

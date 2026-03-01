@@ -6,4 +6,3 @@ joblib
 fastapi
 uvicorn
 pydantic
-npm

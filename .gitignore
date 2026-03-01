@@ -1,0 +1,11 @@
+# Python
+studprof-env/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# OS
+.DS_Store

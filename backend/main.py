@@ -10,7 +10,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "*",
-        "https://studentpreformance-1-epmy.onrender.com",
+        "https://studentpreformance-1-epmy.onrender.com/predict",
         "http://192.168.1.23:3000"
     ],            
     allow_methods=["*"],        

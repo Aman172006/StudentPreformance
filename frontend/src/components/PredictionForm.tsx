@@ -46,7 +46,7 @@ export default function PredictionForm() {
     setPrediction(null);
 
     try {
-      const resp = await fetch('http://localhost:8000/predict', {
+      const resp = await fetch('http://192.168.1.23:8000/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

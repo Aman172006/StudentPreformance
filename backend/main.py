@@ -1,14 +1,18 @@
 from fastapi import FastAPI
 import pandas as pd
 import joblib  
-from model import StudentPerformanceModel
+from .model import StudentPerformanceModel
 app = FastAPI()
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],            
+    allow_origins=[
+        "*",
+        "https://studentpreformance-1-epmy.onrender.com",
+        "http://192.168.1.23:3000"
+    ],            
     allow_methods=["*"],        
     allow_headers=["*"],
 )

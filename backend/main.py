@@ -43,3 +43,19 @@ def predict(payload: StudentPerformanceModel):
     prediction = max(0, min(raw_pred, 20))
 
     return {"predicted_grade": prediction}
+
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+FRONTEND_DIST = BASE_DIR / "frontend_dist"  # we will copy dist here during build
+
+# Serve frontend files
+if FRONTEND_DIST.exists():
+    app.mount("/", StaticFiles(directory=FRONTEND_DIST, html=True), name="frontend")
+
+    @app.get("/{full_path:path}")
+    def spa_fallback(full_path: str):
+        index_file = FRONTEND_DIST / "index.html"
+        return FileResponse(index_file)
